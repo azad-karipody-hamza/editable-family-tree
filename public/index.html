@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editable Family Tree</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Family Tree</h1>
+    <div id="family-tree"></div> <!-- Family tree will be rendered here 
+-->
+  </div>
+
+  <div id="profile-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="profile-form">
+        <input type="hidden" id="profile-id">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+        <label for="image">Image:</label>
+        <input type="file" id="image">
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
