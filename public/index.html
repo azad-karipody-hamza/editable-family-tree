@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editable Family Tree</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Editable Family Tree</title>
 </head>
 <body>
-  <div class="container">
     <h1>Family Tree</h1>
-    <div id="family-tree"></div> <!-- Family tree will be rendered here 
--->
-  </div>
+    <div id="family-tree">
+        <div class="parent" id="grandparents">
+            <div class="grandparent">
+                <h2>Grandfather: <span contenteditable="true">John Doe</span></h2>
+                <input type="file" accept="image/*" id="grandfather-photo">
+            </div>
+            <div class="grandparent">
+                <h2>Grandmother: <span contenteditable="true">Jane Doe</span></h2>
+                <input type="file" accept="image/*" id="grandmother-photo">
+            </div>
+        </div>
+        
+        <div class="parent" id="parents">
+            <h3>Parents:</h3>
+            <div id="father" class="parent-info">
+                <h2>Father: <span contenteditable="true">Father's Name</span></h2>
+                <input type="file" accept="image/*" id="father-photo">
+            </div>
+            <div id="mother" class="parent-info">
+                <h2>Mother: <span contenteditable="true">Mother's Name</span></h2>
+                <input type="file" accept="image/*" id="mother-photo">
+            </div>
+        </div>
 
-  <div id="profile-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Edit Profile</h2>
-      <form id="profile-form">
-        <input type="hidden" id="profile-id">
-        <label for="name">Name:</label>
-        <input type="text" id="name">
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob">
-        <label for="image">Image:</label>
-        <input type="file" id="image">
-        <button type="submit">Save</button>
-      </form>
+        <h3>Children:</h3>
+        <ul id="children-list"></ul>
     </div>
-  </div>
+    
+    <input type="text" id="child-name" placeholder="Enter child's name">
+    <button id="add-child">Add Child</button>
 
-  <script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
-
